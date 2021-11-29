@@ -1,18 +1,23 @@
 package assignment5;
 
 public class Michigan implements IStateStats{
+
+    private final int DEM = 555;
+    private final int REP =555 ;
+    private final int ELECT =555 ;
+
     @Override
-    public double demStat() {
-        return 0;
+    public int demStat() {
+        return DEM;
     }
 
     @Override
-    public double repStat() {
-        return 0;
+    public int repStat() {
+        return REP;
     }
 
     @Override
-    public double electoralStat() {
-        return 0;
+    public int electoralStat() {
+        return ELECT;
     }
 }
