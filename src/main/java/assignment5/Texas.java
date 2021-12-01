@@ -2,22 +2,22 @@ package assignment5;
 
 public class Texas implements IStateStats{
 
-    private final int DEM = 555;
-    private final int REP = 555;
-    private final int ELECT =555;
+    private final int DEM = 3877868;
+    private final int REP = 4685047;
+    private final int ELECT = 38;
 
     @Override
-    public int demStat() {
+    public int getDem() {
         return DEM;
     }
 
     @Override
-    public int repStat() {
+    public int getRep() {
         return REP;
     }
 
     @Override
-    public int electoralStat() {
+    public int getElect() {
         return ELECT;
     }
 }
