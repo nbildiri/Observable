@@ -1,13 +1,12 @@
-package assignment5;
+package assignment5.observers;
 
+import assignment5.VotingObservable;
 import assignment5.states.*;
-import assignment5.strategies.ElectoralHonest;
-import assignment5.strategies.PopularHonest;
 
 import java.util.Observable;
 import java.util.Observer;
 
-public class HonestObserver implements Observer, IDisplay {
+public class DemocratsPopularObserver implements Observer, IDisplay {
 
     Florida florida;
     Michigan michigan;
@@ -16,15 +15,13 @@ public class HonestObserver implements Observer, IDisplay {
     NewYork newYork;
 
 
-    public HonestObserver(Observable observable) {
+    public DemocratsPopularObserver(Observable observable) {
         observable.addObserver(this);
     }
 
 
-    public void update(Observable observable, Object stateObject)
-    {
-        if (observable instanceof VotingObservable)
-        {
+    public void update(Observable observable, Object stateObject) {
+        if (observable instanceof VotingObservable) {
             VotingObservable voting = (VotingObservable) observable;
             this.florida = voting.getFlorida();
             this.michigan = voting.getMichigan();
@@ -39,14 +36,12 @@ public class HonestObserver implements Observer, IDisplay {
 
     @Override
     public void displayPopVote() {
-        PopularHonest popHonest = new PopularHonest(florida, michigan, cali, texas, newYork);
-        System.out.println("\nHonest Popular Vote: " + popHonest.getDem());
+        //TODO fill out
     }
 
     @Override
     public void displayElectVote() {
-        ElectoralHonest electHonest = new ElectoralHonest(florida, michigan, cali, texas, newYork);
-        System.out.println("Honest Electoral Vote: " + electHonest.getElect());
+        //TODO fill out
     }
 
     @Override
@@ -57,3 +52,4 @@ public class HonestObserver implements Observer, IDisplay {
     }
 
 }
+

@@ -4,16 +4,24 @@ import assignment5.states.*;
 
 public class ElectoralDemB {
 
-  /*  Florida florida = new Florida();
-    NewYork newyork = new NewYork();
-    California cali = new California();
-    Michigan michigan = new Michigan();
-    Texas texas = new Texas();
-    ElectoralHonest electHonest = new ElectoralHonest();
+    Florida florida;
+    Michigan michigan;
+    California cali;
+    Texas texas;
+    NewYork newYork;
 
-    public int getElectoralDem()
-    {
+    public ElectoralDemB(Florida florida, Michigan michigan, California cali, Texas texas, NewYork newYork) {
+        this.florida = florida;
+        this.michigan = michigan;
+        this.cali = cali;
+        this.texas = texas;
+        this.newYork = newYork;
+    }
 
-return 0;
-    }*/
+
+    public int getElectoralDem() {
+
+        //TODO Fill this out
+        return 0;
+    }
 }

@@ -1,8 +1,9 @@
 package assignment5;
 
+import assignment5.observers.HonestObserver;
 import assignment5.states.*;
 
-public class Program {
+public class ProgramMain {
 
     public static void main(String[] args) {
 
@@ -16,6 +17,9 @@ public class Program {
         NewYork newYork = new NewYork(4556124, 2819534, 29);
 
         voting.setVotes(florida, michigan, cali, texas, newYork);
+
+        //TODO fill in the 4 new observers
+        //TODO Fill out ElectoralDemB Strategy
 
         System.out.println("End Of Program.");
 

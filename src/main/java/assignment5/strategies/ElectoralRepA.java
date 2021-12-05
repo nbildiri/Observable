@@ -4,20 +4,29 @@ import assignment5.states.*;
 
 public class ElectoralRepA {
 
-    /*Florida florida = new Florida();
-    NewYork newyork = new NewYork();
-    California cali = new California();
-    Michigan michigan = new Michigan();
-    Texas texas = new Texas();
+    Florida florida;
+    Michigan michigan;
+    California cali;
+    Texas texas;
+    NewYork newYork;
     int repElectoral;
+
+    public ElectoralRepA(Florida florida, Michigan michigan, California cali, Texas texas, NewYork newYork) {
+        this.florida = florida;
+        this.michigan = michigan;
+        this.cali = cali;
+        this.texas = texas;
+        this.newYork = newYork;
+    }
+
 
     public int getRepElectoral() {
         repElectoral = michigan.getElect();
         if(florida.getRep() > florida.getDem()) {
             repElectoral += florida.getElect();
         }
-        if(newyork.getRep() > newyork.getDem()) {
-            repElectoral += newyork.getElect();
+        if(newYork.getRep() > newYork.getDem()) {
+            repElectoral += newYork.getElect();
         }
         if(cali.getRep() > cali.getDem()) {
             repElectoral += cali.getElect();
@@ -26,5 +35,5 @@ public class ElectoralRepA {
             repElectoral += texas.getElect();
         }
         return repElectoral;
-    }*/
+    }
 }

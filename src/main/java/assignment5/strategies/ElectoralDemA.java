@@ -6,20 +6,31 @@ import java.util.ArrayList;
 
 public class ElectoralDemA {
 
-  /*  Florida florida = new Florida();
-    NewYork newyork = new NewYork();
-    California cali = new California();
-    Michigan michigan = new Michigan();
-    Texas texas = new Texas();
+    Florida florida;
+    Michigan michigan;
+    California cali;
+    Texas texas;
+    NewYork newYork;
     ArrayList<IStateStats> stateStatsDem = new ArrayList();
-    ElectoralHonest electHonest = new ElectoralHonest();
-    int totalRep = electHonest.getElectRep();
-    int totalDem = electHonest.getElectDem();
+    ElectoralHonest electHonest;
+    int totalRep, totalDem;
+
+    public ElectoralDemA(Florida florida, Michigan michigan, California cali, Texas texas, NewYork newYork) {
+        this.florida = florida;
+        this.michigan = michigan;
+        this.cali = cali;
+        this.texas = texas;
+        this.newYork = newYork;
+        electHonest = new ElectoralHonest(florida, michigan, cali, texas, newYork);
+        totalRep = electHonest.getElectRep();
+        totalDem = electHonest.getElectDem();
+    }
+
 
     public int getDemElectoral() {
 
         stateStatsDem.add(florida);
-        stateStatsDem.add(newyork);
+        stateStatsDem.add(newYork);
         stateStatsDem.add(cali);
         stateStatsDem.add(michigan);
         stateStatsDem.add(texas);
@@ -43,5 +54,5 @@ public class ElectoralDemA {
 
         return totalDem + totalRep;
 
-    }*/
+    }
 }

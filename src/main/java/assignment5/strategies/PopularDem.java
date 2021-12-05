@@ -7,19 +7,25 @@ import java.util.Collections;
 
 public class PopularDem {
 
-   /* Florida florida = new Florida();
-    NewYork newyork = new NewYork();
-    California cali = new California();
-    Michigan michigan = new Michigan();
-    Texas texas = new Texas();
+    Florida florida;
+    Michigan michigan;
+    California cali;
+    Texas texas;
+    NewYork newYork;
     ArrayList<Integer> stateStatsRep = new ArrayList<>();
-    PopularHonest popularHonest = new PopularHonest();
 
+    public PopularDem(Florida florida, Michigan michigan, California cali, Texas texas, NewYork newYork) {
+        this.florida = florida;
+        this.michigan = michigan;
+        this.cali = cali;
+        this.texas = texas;
+        this.newYork = newYork;
+    }
 
     public int getDem() {
 
         stateStatsRep.add(florida.getRep());
-        stateStatsRep.add(newyork.getRep());
+        stateStatsRep.add(newYork.getRep());
         stateStatsRep.add(cali.getRep());
         stateStatsRep.add(michigan.getRep());
         stateStatsRep.add(texas.getRep());
@@ -33,7 +39,9 @@ public class PopularDem {
             popularRep += state;
         }
 
+        PopularHonest popularHonest = new PopularHonest(florida, michigan, cali, texas, newYork);
+
         return popularRep + popularHonest.getDem();
 
-    }*/
+    }
 }

@@ -1,4 +1,4 @@
-package assignment5;
+package assignment5.observers;
 
 public interface IDisplay {
 
