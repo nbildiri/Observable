@@ -1,4 +1,6 @@
-package assignment5;
+package assignment5.states;
+
+import java.util.ArrayList;
 
 public interface IStateStats {
 
