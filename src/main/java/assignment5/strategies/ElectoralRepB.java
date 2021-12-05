@@ -3,13 +3,20 @@ package assignment5.strategies;
 import assignment5.states.*;
 
 public class ElectoralRepB {
-
-    /*Florida florida = new Florida();
-    NewYork newyork = new NewYork();
-    California cali = new California();
-    Michigan michigan = new Michigan();
-    Texas texas = new Texas();
+    Florida florida;
+    Michigan michigan;
+    California cali;
+    Texas texas;
+    NewYork newYork;
     int repElectoral = 0;
+
+    public ElectoralRepB(Florida florida, Michigan michigan, California cali, Texas texas, NewYork newYork) {
+        this.florida = florida;
+        this.michigan = michigan;
+        this.cali = cali;
+        this.texas = texas;
+        this.newYork = newYork;
+    }
 
     public int getRepElectoral() {
         repElectoral = floridaElectoral() + michiganElectoral() + californiaElectoral() + newyorkElectoral() + texasElectoral();
@@ -52,13 +59,13 @@ public class ElectoralRepB {
     public int newyorkElectoral() {
         int diff;
         int newyorkRepElectoral = 0;
-        if (newyork.getRep() > newyork.getDem()) {
-            newyorkRepElectoral = newyork.getElect();
+        if (newYork.getRep() > newYork.getDem()) {
+            newyorkRepElectoral = newYork.getElect();
             return newyorkRepElectoral;
         } else {
-            diff = newyork.getDem() - newyork.getRep();
+            diff = newYork.getDem() - newYork.getRep();
             if (diff < 1000) {
-                newyorkRepElectoral = newyork.getElect() / 2;
+                newyorkRepElectoral = newYork.getElect() / 2;
                 return newyorkRepElectoral;
             }
         }
@@ -96,5 +103,5 @@ public class ElectoralRepB {
         }
         return californiaRepElectoral;
     }
-*/
+
 }
