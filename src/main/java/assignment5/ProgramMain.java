@@ -3,6 +3,8 @@ package assignment5;
 import assignment5.observers.HonestObserver;
 import assignment5.states.*;
 
+import java.util.ArrayList;
+
 public class ProgramMain {
 
     public static void main(String[] args) {
@@ -10,13 +12,15 @@ public class ProgramMain {
         VotingObservable voting = new VotingObservable();
         HonestObserver honestObserver = new HonestObserver(voting);
 
-        Florida florida = new Florida(4504975, 4617886, 29);
-        Michigan michigan = new Michigan(2268839, 2279543, 16);
-        California cali = new California(8753788, 4483810,55);
-        Texas texas = new Texas(3877868, 4685047, 38);
-        NewYork newYork = new NewYork(4556124, 2819534, 29);
+        ArrayList<State> states = new ArrayList<>();
 
-        voting.setVotes(florida, michigan, cali, texas, newYork);
+        states.add(new State("Florida", 4504975, 4617886, 29));
+        states.add(new State("Michigan", 2268839, 2279543, 16));
+        states.add(new State("California", 8753788, 4483810,55));
+        states.add(new State("Texas",3877868, 4685047, 38));
+        states.add(new State("New York" , 4556124, 2819534, 29));
+
+        voting.setVotes(states);
 
         //TODO fill in the 4 new observers
         //TODO Fill out ElectoralDemB Strategy

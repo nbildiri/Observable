@@ -1,38 +1,29 @@
 package assignment5.strategies;
 
+import assignment5.State;
 import assignment5.states.*;
+
+import java.util.ArrayList;
 
 public class ElectoralRepA {
 
-    Florida florida;
-    Michigan michigan;
-    California cali;
-    Texas texas;
-    NewYork newYork;
-    int repElectoral;
+    ArrayList<State> states = new ArrayList<>();
 
-    public ElectoralRepA(Florida florida, Michigan michigan, California cali, Texas texas, NewYork newYork) {
-        this.florida = florida;
-        this.michigan = michigan;
-        this.cali = cali;
-        this.texas = texas;
-        this.newYork = newYork;
+    public ElectoralRepA(ArrayList<State> states) {
+        this.states.addAll(states);
     }
 
 
     public int getRepElectoral() {
-        repElectoral = michigan.getElect();
-        if(florida.getRep() > florida.getDem()) {
-            repElectoral += florida.getElect();
-        }
-        if(newYork.getRep() > newYork.getDem()) {
-            repElectoral += newYork.getElect();
-        }
-        if(cali.getRep() > cali.getDem()) {
-            repElectoral += cali.getElect();
-        }
-        if(texas.getRep() > texas.getDem()) {
-            repElectoral += texas.getElect();
+
+        //states.get(0) will always be republican
+        int repElectoral = states.get(0).getElect();
+
+        //for loop will start from 1
+        for (int i = 1; i < states.size(); i++) {
+            if(states.get(i).getRep() > states.get(i).getDem()) {
+                repElectoral += states.get(i).getElect();
+            }
         }
         return repElectoral;
     }

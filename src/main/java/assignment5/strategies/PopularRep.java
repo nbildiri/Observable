@@ -1,26 +1,21 @@
 package assignment5.strategies;
 
+import assignment5.State;
 import assignment5.states.*;
+
+import java.util.ArrayList;
 
 public class PopularRep {
 
-    Florida florida;
-    Michigan michigan;
-    California cali;
-    Texas texas;
-    NewYork newYork;
+    ArrayList<State> states = new ArrayList<>();
 
-    public PopularRep(Florida florida, Michigan michigan, California cali, Texas texas, NewYork newYork) {
-        this.florida = florida;
-        this.michigan = michigan;
-        this.cali = cali;
-        this.texas = texas;
-        this.newYork = newYork;
+    public PopularRep(ArrayList<State> states) {
+        this.states.addAll(states);
     }
 
 
     public int getPopularRep() {
-        PopularHonest popularHonest = new PopularHonest(florida, michigan, cali, texas, newYork);
+        PopularHonest popularHonest = new PopularHonest(states);
         return (int) (popularHonest.getRep() + (popularHonest.getDem() - popularHonest.getDem() * .05));
     }
 

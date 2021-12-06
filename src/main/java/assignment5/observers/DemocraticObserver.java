@@ -1,18 +1,16 @@
 package assignment5.observers;
 
+import assignment5.State;
 import assignment5.VotingObservable;
 import assignment5.states.*;
 
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
 public class DemocraticObserver implements Observer, IDisplay {
 
-    Florida florida;
-    Michigan michigan;
-    California cali;
-    Texas texas;
-    NewYork newYork;
+   ArrayList<State> states = new ArrayList<>();
 
 
     public DemocraticObserver(Observable observable) {
@@ -23,11 +21,7 @@ public class DemocraticObserver implements Observer, IDisplay {
     public void update(Observable observable, Object stateObject) {
         if (observable instanceof VotingObservable) {
             VotingObservable voting = (VotingObservable) observable;
-            this.florida = voting.getFlorida();
-            this.michigan = voting.getMichigan();
-            this.cali = voting.getCali();
-            this.texas = voting.getTexas();
-            this.newYork = voting.getNewYork();
+            this.states = voting.getStates();
             displayPopVote();
             displayElectVote();
             displayLegalMessage();
