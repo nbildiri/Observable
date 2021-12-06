@@ -1,27 +1,19 @@
 package assignment5.strategies;
 
+import assignment5.State;
 import assignment5.states.*;
 
 import java.util.ArrayList;
 
 public class ElectoralDemA {
 
-    Florida florida;
-    Michigan michigan;
-    California cali;
-    Texas texas;
-    NewYork newYork;
-    ArrayList<IStateStats> stateStatsDem = new ArrayList();
+    ArrayList<State> states = new ArrayList<>();
     ElectoralHonest electHonest;
     int totalRep, totalDem;
 
-    public ElectoralDemA(Florida florida, Michigan michigan, California cali, Texas texas, NewYork newYork) {
-        this.florida = florida;
-        this.michigan = michigan;
-        this.cali = cali;
-        this.texas = texas;
-        this.newYork = newYork;
-        electHonest = new ElectoralHonest(florida, michigan, cali, texas, newYork);
+    public ElectoralDemA(ArrayList<State> states) {
+        this.states.addAll(states);
+        electHonest = new ElectoralHonest(states);
         totalRep = electHonest.getElectRep();
         totalDem = electHonest.getElectDem();
     }
@@ -29,16 +21,11 @@ public class ElectoralDemA {
 
     public int getDemElectoral() {
 
-        stateStatsDem.add(florida);
-        stateStatsDem.add(newYork);
-        stateStatsDem.add(cali);
-        stateStatsDem.add(michigan);
-        stateStatsDem.add(texas);
 
-        IStateStats stateElect = stateStatsDem.get(0);
-        int highestElect = stateStatsDem.get(0).getElect();
+        State stateElect = states.get(0);
+        int highestElect = states.get(0).getElect();
 
-        for(IStateStats state : stateStatsDem)
+        for(State state : states)
         {
             if(state.getElect() > highestElect) {
                 highestElect = state.getElect();

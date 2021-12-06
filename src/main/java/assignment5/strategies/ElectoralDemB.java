@@ -1,21 +1,16 @@
 package assignment5.strategies;
 
+import assignment5.State;
 import assignment5.states.*;
+
+import java.util.ArrayList;
 
 public class ElectoralDemB {
 
-    Florida florida;
-    Michigan michigan;
-    California cali;
-    Texas texas;
-    NewYork newYork;
+    ArrayList<State> states = new ArrayList<>();
 
-    public ElectoralDemB(Florida florida, Michigan michigan, California cali, Texas texas, NewYork newYork) {
-        this.florida = florida;
-        this.michigan = michigan;
-        this.cali = cali;
-        this.texas = texas;
-        this.newYork = newYork;
+    public ElectoralDemB(ArrayList<State> states) {
+        this.states.addAll(states);
     }
 
 

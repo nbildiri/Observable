@@ -1,72 +1,48 @@
 package assignment5.strategies;
 
+import assignment5.State;
 import assignment5.states.*;
+
+import java.util.ArrayList;
 
 public class ElectoralHonest {
 
-    Florida florida;
-    Michigan michigan;
-    California cali;
-    Texas texas;
-    NewYork newYork;
+    ArrayList<State> states = new ArrayList<>();
 
-    public ElectoralHonest(Florida florida, Michigan michigan, California cali, Texas texas, NewYork newYork) {
-        this.florida = florida;
-        this.michigan = michigan;
-        this.cali = cali;
-        this.texas = texas;
-        this.newYork = newYork;
+    public ElectoralHonest(ArrayList<State> states) {
+        this.states.addAll(states);
     }
 
-    public int getElect()
-    {
-        return florida.getElect() + newYork.getElect() + cali.getElect() + michigan.getElect() + texas.getElect();
+    public int getElect() {
+        int electTotal = 0;
+        for (State state : states) {
+            electTotal += state.getElect();
+        }
+        return electTotal;
     }
 
-    public int getElectRep()
-    {
+    public int getElectRep() {
         int repElectoral = 0;
 
-        if(florida.getRep() > florida.getDem()) {
-            repElectoral += florida.getElect();
-        }
-        if(newYork.getRep() > newYork.getDem()) {
-            repElectoral += newYork.getElect();
-        }
-        if(cali.getRep() > cali.getDem()) {
-            repElectoral += cali.getElect();
-        }
-        if(texas.getRep() > texas.getDem()) {
-            repElectoral += texas.getElect();
-        }
-        if(michigan.getRep() > michigan.getDem()) {
-            repElectoral += texas.getElect();
+        for (State state : states) {
+            if (state.getRep() > state.getDem()) {
+                repElectoral += state.getElect();
+            }
         }
 
-        return  repElectoral;
+        return repElectoral;
     }
 
-    public int getElectDem()
-    {
-        int repElectoral = 0;
+    public int getElectDem() {
+        int demElectoral = 0;
 
-        if(florida.getDem() > florida.getRep()) {
-            repElectoral += florida.getElect();
-        }
-        if(newYork.getDem() > newYork.getRep()) {
-            repElectoral += newYork.getElect();
-        }
-        if(cali.getDem() > cali.getRep()) {
-            repElectoral += cali.getElect();
-        }
-        if(texas.getDem() > texas.getRep()) {
-            repElectoral += texas.getElect();
-        }
-        if(michigan.getDem() > michigan.getRep()) {
-            repElectoral += texas.getElect();
+        for (State state : states) {
+            if (state.getDem() > state.getRep()) {
+                demElectoral += state.getElect();
+            }
         }
 
-        return  repElectoral;
+        return demElectoral;
     }
 
 }

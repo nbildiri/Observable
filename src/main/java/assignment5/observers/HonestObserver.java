@@ -1,20 +1,18 @@
 package assignment5.observers;
 
+import assignment5.State;
 import assignment5.VotingObservable;
 import assignment5.states.*;
 import assignment5.strategies.ElectoralHonest;
 import assignment5.strategies.PopularHonest;
 
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
 public class HonestObserver implements Observer, IDisplay {
 
-    Florida florida;
-    Michigan michigan;
-    California cali;
-    Texas texas;
-    NewYork newYork;
+   ArrayList<State> states;
 
 
     public HonestObserver(Observable observable) {
@@ -27,11 +25,7 @@ public class HonestObserver implements Observer, IDisplay {
         if (observable instanceof VotingObservable)
         {
             VotingObservable voting = (VotingObservable) observable;
-            this.florida = voting.getFlorida();
-            this.michigan = voting.getMichigan();
-            this.cali = voting.getCali();
-            this.texas = voting.getTexas();
-            this.newYork = voting.getNewYork();
+            this.states = voting.getStates();
             displayPopVote();
             displayElectVote();
             displayLegalMessage();
@@ -40,13 +34,13 @@ public class HonestObserver implements Observer, IDisplay {
 
     @Override
     public void displayPopVote() {
-        PopularHonest popHonest = new PopularHonest(florida, michigan, cali, texas, newYork);
+        PopularHonest popHonest = new PopularHonest(states);
         System.out.println("\nHonest Popular Vote: " + popHonest.getDem());
     }
 
     @Override
     public void displayElectVote() {
-        ElectoralHonest electHonest = new ElectoralHonest(florida, michigan, cali, texas, newYork);
+        ElectoralHonest electHonest = new ElectoralHonest(states);
         System.out.println("Honest Electoral Vote: " + electHonest.getElect());
     }
 

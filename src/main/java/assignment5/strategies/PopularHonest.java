@@ -1,34 +1,41 @@
 package assignment5.strategies;
 
+import assignment5.State;
 import assignment5.VotingObservable;
 import assignment5.states.*;
 
+import java.util.ArrayList;
 import java.util.Observable;
 
 public class PopularHonest{
 
-    Florida florida;
-    Michigan michigan;
-    California cali;
-    Texas texas;
-    NewYork newYork;
+    ArrayList<State> states = new ArrayList<>();
 
-    public PopularHonest(Florida florida, Michigan michigan, California cali, Texas texas, NewYork newYork) {
-        this.florida = florida;
-        this.michigan = michigan;
-        this.cali = cali;
-        this.texas = texas;
-        this.newYork = newYork;
+    public PopularHonest(ArrayList<State> states) {
+        this.states.addAll(states);
     }
 
     public int getDem()
     {
-        return florida.getDem() + newYork.getDem() + cali.getDem() + michigan.getDem() + texas.getDem();
+        int demTotal = 0;
+
+        for(State state : states)
+        {
+            demTotal += state.getDem();
+        }
+        return demTotal;
     }
 
     public int getRep()
     {
-        return florida.getRep() + newYork.getRep() + cali.getRep() + michigan.getRep() + texas.getRep();
+        int repTotal = 0;
+
+        for(State state : states)
+        {
+            repTotal += state.getRep();
+        }
+        return repTotal;
+
     }
 
 }
