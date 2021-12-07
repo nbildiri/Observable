@@ -1,27 +1,18 @@
 package assignment5.strategies;
 
 import assignment5.State;
-import assignment5.states.*;
 
 import java.util.ArrayList;
 
-public class ElectoralHonest {
+public class ElectoralHonest implements IStrategy {
 
     ArrayList<State> states = new ArrayList<>();
 
     public ElectoralHonest(ArrayList<State> states) {
-        this.states.addAll(states);
+        this.states = states;
     }
 
-    public int getElect() {
-        int electTotal = 0;
-        for (State state : states) {
-            electTotal += state.getElect();
-        }
-        return electTotal;
-    }
-
-    public int getElectRep() {
+    public int getRep() {
         int repElectoral = 0;
 
         for (State state : states) {
@@ -29,11 +20,10 @@ public class ElectoralHonest {
                 repElectoral += state.getElect();
             }
         }
-
         return repElectoral;
     }
 
-    public int getElectDem() {
+    public int getDem() {
         int demElectoral = 0;
 
         for (State state : states) {
@@ -41,7 +31,6 @@ public class ElectoralHonest {
                 demElectoral += state.getElect();
             }
         }
-
         return demElectoral;
     }
 

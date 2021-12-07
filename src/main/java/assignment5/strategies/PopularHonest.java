@@ -1,18 +1,16 @@
 package assignment5.strategies;
 
 import assignment5.State;
-import assignment5.VotingObservable;
-import assignment5.states.*;
 
 import java.util.ArrayList;
-import java.util.Observable;
 
-public class PopularHonest{
+
+public class PopularHonest implements IStrategy {
 
     ArrayList<State> states = new ArrayList<>();
 
     public PopularHonest(ArrayList<State> states) {
-        this.states.addAll(states);
+        this.states = states;
     }
 
     public int getDem()

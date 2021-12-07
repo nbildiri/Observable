@@ -1,22 +1,27 @@
 package assignment5.strategies;
 
 import assignment5.State;
-import assignment5.states.*;
 
 import java.util.ArrayList;
 
-public class PopularRep {
+public class PopularRep implements IStrategy {
 
     ArrayList<State> states = new ArrayList<>();
 
     public PopularRep(ArrayList<State> states) {
-        this.states.addAll(states);
+        this.states = states;
+        }
+
+    public int getRep()
+    {
+        PopularHonest popularHonest = new PopularHonest(states);
+        return popularHonest.getRep();
     }
 
 
-    public int getPopularRep() {
+    public int getDem() {
         PopularHonest popularHonest = new PopularHonest(states);
-        return (int) (popularHonest.getRep() + (popularHonest.getDem() - popularHonest.getDem() * .05));
+        return (int) ((popularHonest.getDem() - popularHonest.getDem() * .05));
     }
 
 }
