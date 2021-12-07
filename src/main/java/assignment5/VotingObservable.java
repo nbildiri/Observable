@@ -1,14 +1,12 @@
 package assignment5;
 
-import assignment5.states.*;
-
 import java.util.ArrayList;
 import java.util.Observable;
 
 
 public class VotingObservable extends Observable {
 
-    ArrayList<State> states;
+    ArrayList<State> states = new ArrayList<>();
 
 
     public void votesChanged() {
@@ -17,7 +15,7 @@ public class VotingObservable extends Observable {
     }
 
     public void setVotes(ArrayList<State> states) {
-        this.states.addAll(states);
+        this.states = states;
         votesChanged();
     }
 

@@ -2,31 +2,18 @@ package assignment5.observers;
 
 import assignment5.State;
 import assignment5.VotingObservable;
-import assignment5.states.*;
 
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
-public class DemocraticObserver implements Observer, IDisplay {
-
-   ArrayList<State> states = new ArrayList<>();
+public class DemocraticObserver extends MainObserver implements Observer, IDisplay {
 
 
     public DemocraticObserver(Observable observable) {
         observable.addObserver(this);
     }
 
-
-    public void update(Observable observable, Object stateObject) {
-        if (observable instanceof VotingObservable) {
-            VotingObservable voting = (VotingObservable) observable;
-            this.states = voting.getStates();
-            displayPopVote();
-            displayElectVote();
-            displayLegalMessage();
-        }
-    }
 
     @Override
     public void displayPopVote() {

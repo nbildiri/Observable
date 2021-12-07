@@ -1,28 +1,24 @@
 package assignment5.strategies;
 
 import assignment5.State;
-import assignment5.states.*;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
-public class PopularDem {
+public class PopularDem implements IStrategy {
 
     ArrayList<State> states = new ArrayList<>();
-    ArrayList<Integer> stateStatsRep = new ArrayList<>();
 
     public PopularDem(ArrayList<State> states) {
-        this.states.addAll(states);
+        this.states = states;
     }
 
-    public int getDem() {
+    public int getRep() {
 
         State stateRep = states.get(0);
         int highestRep = states.get(0).getRep();
 
-        for(State state : states)
-        {
-            if(state.getRep() > highestRep) {
+        for (State state : states) {
+            if (state.getRep() > highestRep) {
                 highestRep = state.getRep();
                 stateRep = state;
             }
@@ -30,9 +26,12 @@ public class PopularDem {
 
         PopularHonest popularHonest = new PopularHonest(states);
 
-        int popularRep = popularHonest.getRep() - stateRep.getRep();
+        return popularHonest.getRep() - stateRep.getRep();
 
-        return popularRep + popularHonest.getDem();
+    }
 
+    public int getDem() {
+        PopularHonest popularHonest = new PopularHonest(states);
+        return popularHonest.getDem();
     }
 }

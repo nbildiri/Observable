@@ -1,20 +1,23 @@
 package assignment5.strategies;
 
 import assignment5.State;
-import assignment5.states.*;
 
 import java.util.ArrayList;
 
-public class ElectoralRepA {
+public class ElectoralRepA implements IStrategy {
 
     ArrayList<State> states = new ArrayList<>();
 
     public ElectoralRepA(ArrayList<State> states) {
-        this.states.addAll(states);
+        this.states = states;
     }
 
+    public int getDem(){
+        ElectoralHonest electoralHonest = new ElectoralHonest(states);
+        return electoralHonest.getDem();
+    }
 
-    public int getRepElectoral() {
+    public int getRep() {
 
         //states.get(0) will always be republican
         int repElectoral = states.get(0).getElect();
@@ -27,4 +30,5 @@ public class ElectoralRepA {
         }
         return repElectoral;
     }
+
 }
