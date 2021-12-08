@@ -1,6 +1,9 @@
 package assignment5;
 
-import assignment5.observers.HonestObserver;
+import assignment5.observers.DemocraticFavoringObserver2;
+import assignment5.observers.HonestObserver5;
+import assignment5.observers.RepublicanElectoralFavoringObserver3;
+import assignment5.observers.RepublicanFavoringObserver1;
 
 import java.util.ArrayList;
 
@@ -9,7 +12,11 @@ public class ProgramMain {
     public static void main(String[] args) {
 
         VotingObservable voting = new VotingObservable();
-        HonestObserver honestObserver = new HonestObserver(voting);
+        HonestObserver5 honestObserver = new HonestObserver5(voting);
+        DemocraticFavoringObserver2 democraticFavoringObserver = new DemocraticFavoringObserver2(voting);
+        RepublicanElectoralFavoringObserver3 republicanElectoralFavoringObserver3 = new RepublicanElectoralFavoringObserver3(voting);
+        DemocraticFavoringObserver2 democraticFavoringObserver2 = new DemocraticFavoringObserver2(voting);
+        RepublicanFavoringObserver1 republicanFavoringObserver1 = new RepublicanFavoringObserver1(voting);
 
         ArrayList<State> states = new ArrayList<>();
 
@@ -20,9 +27,6 @@ public class ProgramMain {
         states.add(new State("New York" , 4556124, 2819534, 29));
 
         voting.setVotes(states);
-
-        //TODO fill in the 4 new observers
-        //TODO Fill out ElectoralDemB Strategy
 
         System.out.println("End Of Program.");
 
