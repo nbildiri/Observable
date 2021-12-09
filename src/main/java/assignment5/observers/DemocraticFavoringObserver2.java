@@ -3,6 +3,7 @@ package assignment5.observers;
 import assignment5.State;
 import assignment5.VotingObservable;
 import assignment5.strategies.ElectoralDemA;
+import assignment5.strategies.ElectoralDemB;
 import assignment5.strategies.PopularDem;
 import assignment5.strategies.PopularRep;
 
@@ -27,7 +28,7 @@ public class DemocraticFavoringObserver2 extends MainObserver implements Observe
 
     @Override
     public void displayElectVote() {
-        electoralStrategy = new ElectoralDemA(states);
+        electoralStrategy = new ElectoralDemB(states);
         System.out.println("\nDemocratic Favoring Electoral: \nDemocratic Electoral Vote: " + electoralStrategy.getElectDem());
         System.out.println("Republican Electoral Vote: " + electoralStrategy.getElectRep());
     }

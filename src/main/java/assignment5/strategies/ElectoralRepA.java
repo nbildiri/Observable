@@ -19,11 +19,11 @@ public class ElectoralRepA implements IElectoralStrategy {
 
     public int getElectRep() {
 
-        //states.get(0) will always be republican
-        int repElectoral = states.get(0).getElect();
+        //states.get(4) will always be republican
+        int repElectoral = states.get(4).getElect();
 
-        //for loop will start from 1
-        for (int i = 1; i < states.size(); i++) {
+
+        for (int i = 0; i < states.size()-1; i++) {
             if(states.get(i).getRep() > states.get(i).getDem()) {
                 repElectoral += states.get(i).getElect();
             }

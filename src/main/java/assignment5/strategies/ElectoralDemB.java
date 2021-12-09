@@ -19,12 +19,12 @@ public class ElectoralDemB implements IElectoralStrategy {
 
         electHonest = new ElectoralHonest(states);
         twoPercentRep = electHonest.getElectRep() *.02;
-        return (int) twoPercentRep + electHonest.getElectDem();
+        return (int) (electHonest.getElectDem() + twoPercentRep);
     }
 
     public int getElectRep() {
         electHonest = new ElectoralHonest(states);
         twoPercentRep = electHonest.getElectRep() *.02;
-        return (int) twoPercentRep - electHonest.getElectRep();
+        return (int) (electHonest.getElectRep() - twoPercentRep);
     }
 }

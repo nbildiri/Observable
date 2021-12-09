@@ -21,7 +21,6 @@ public class ElectoralRepB implements IElectoralStrategy{
     public int getElectRep() {
         int repElectoral = 0;
         int diff;
-        int stateOddNum;
         for (State state : states) {
             if (state.getRep() > state.getDem()) {
                 repElectoral += state.getElect();
