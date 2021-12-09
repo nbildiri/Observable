@@ -39,9 +39,20 @@ public class ProgramMain {
 
         voting.setVotes(states);
 
+        System.out.println("\n*** Observations of Ten States. ***");
 
-        System.out.println("\n*** Observations of Ten States.***");
 
+        states.removeAll(states);
+
+        states.add(new State("Utah", 23166819, 2573523, 22));
+        states.add(new State("California", 8753788, 4483810,55));
+        states.add(new State("New York" , 4556124, 2819534, 29));
+        states.add(new State("Illinois",5877868, 4685047, 44));
+        states.add(new State("Virginia",2877868, 3285047, 18));
+
+        voting.setVotes(states);
+
+        System.out.println("\n*** Observations of Five States. ***");
 
     }
 

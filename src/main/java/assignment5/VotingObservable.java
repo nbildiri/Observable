@@ -20,7 +20,6 @@ public class VotingObservable extends Observable {
     }
 
     // Needed for pull:
-
     public ArrayList<State> getStates() {
         return states;
     }
