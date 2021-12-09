@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
-public class MainObserver implements Observer, IDisplay{
+public abstract class MainObserver implements Observer, IDisplay{
 
     ArrayList<State> states = new ArrayList<>();
     IPopularStrategy popularStrategy;
