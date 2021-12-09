@@ -4,7 +4,7 @@ import assignment5.State;
 
 import java.util.ArrayList;
 
-public class ElectoralHonest implements IStrategy {
+public class ElectoralHonest implements IElectoralStrategy {
 
     ArrayList<State> states = new ArrayList<>();
 
@@ -12,7 +12,7 @@ public class ElectoralHonest implements IStrategy {
         this.states = states;
     }
 
-    public int getRep() {
+    public int getElectRep() {
         int repElectoral = 0;
 
         for (State state : states) {
@@ -23,7 +23,7 @@ public class ElectoralHonest implements IStrategy {
         return repElectoral;
     }
 
-    public int getDem() {
+    public int getElectDem() {
         int demElectoral = 0;
 
         for (State state : states) {

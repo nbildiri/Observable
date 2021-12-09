@@ -4,24 +4,27 @@ import assignment5.State;
 
 import java.util.ArrayList;
 
-public class ElectoralDemB implements IStrategy {
+public class ElectoralDemB implements IElectoralStrategy {
 
     ArrayList<State> states = new ArrayList<>();
+    ElectoralHonest electHonest;
+    double twoPercentRep;
 
     public ElectoralDemB(ArrayList<State> states) {
         this.states = states;
     }
 
 
-    public int getDem() {
+    public int getElectDem() {
 
-        //TODO Fill this out
-        return 0;
+        electHonest = new ElectoralHonest(states);
+        twoPercentRep = electHonest.getElectRep() *.02;
+        return (int) (electHonest.getElectDem() + twoPercentRep);
     }
 
-    public int getRep() {
-
-        //TODO Fill this out
-        return 0;
+    public int getElectRep() {
+        electHonest = new ElectoralHonest(states);
+        twoPercentRep = electHonest.getElectRep() *.02;
+        return (int) (electHonest.getElectRep() - twoPercentRep);
     }
 }

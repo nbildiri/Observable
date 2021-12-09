@@ -4,7 +4,7 @@ import assignment5.State;
 
 import java.util.ArrayList;
 
-public class ElectoralRepA implements IStrategy {
+public class ElectoralRepA implements IElectoralStrategy {
 
     ArrayList<State> states = new ArrayList<>();
 
@@ -12,18 +12,18 @@ public class ElectoralRepA implements IStrategy {
         this.states = states;
     }
 
-    public int getDem(){
+    public int getElectDem(){
         ElectoralHonest electoralHonest = new ElectoralHonest(states);
-        return electoralHonest.getDem();
+        return electoralHonest.getElectDem();
     }
 
-    public int getRep() {
+    public int getElectRep() {
 
-        //states.get(0) will always be republican
-        int repElectoral = states.get(0).getElect();
+        //states.get(4) will always be republican
+        int repElectoral = states.get(4).getElect();
 
-        //for loop will start from 1
-        for (int i = 1; i < states.size(); i++) {
+
+        for (int i = 0; i < states.size()-1; i++) {
             if(states.get(i).getRep() > states.get(i).getDem()) {
                 repElectoral += states.get(i).getElect();
             }

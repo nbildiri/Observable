@@ -4,7 +4,7 @@ import assignment5.State;
 
 import java.util.ArrayList;
 
-public class PopularDem implements IStrategy {
+public class PopularDem implements IPopularStrategy {
 
     ArrayList<State> states = new ArrayList<>();
 
@@ -12,7 +12,7 @@ public class PopularDem implements IStrategy {
         this.states = states;
     }
 
-    public int getRep() {
+    public int getPopRep() {
 
         State stateRep = states.get(0);
         int highestRep = states.get(0).getRep();
@@ -26,12 +26,12 @@ public class PopularDem implements IStrategy {
 
         PopularHonest popularHonest = new PopularHonest(states);
 
-        return popularHonest.getRep() - stateRep.getRep();
+        return popularHonest.getPopRep() - stateRep.getRep();
 
     }
 
-    public int getDem() {
+    public int getPopDem() {
         PopularHonest popularHonest = new PopularHonest(states);
-        return popularHonest.getDem();
+        return popularHonest.getPopDem();
     }
 }

@@ -4,7 +4,7 @@ import assignment5.State;
 
 import java.util.ArrayList;
 
-public class ElectoralRepB {
+public class ElectoralRepB implements IElectoralStrategy{
     ArrayList<State> states = new ArrayList<>();
     private final int TOOCLOSE = 1000;
 
@@ -13,15 +13,14 @@ public class ElectoralRepB {
         this.states = states;
     }
 
-    public int getDem() {
+    public int getElectDem() {
         ElectoralHonest electoralHonest = new ElectoralHonest(states);
-        return electoralHonest.getDem();
+        return electoralHonest.getElectDem();
     }
 
-    public int getRep() {
+    public int getElectRep() {
         int repElectoral = 0;
         int diff;
-        int stateOddNum;
         for (State state : states) {
             if (state.getRep() > state.getDem()) {
                 repElectoral += state.getElect();

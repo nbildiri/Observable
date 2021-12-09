@@ -4,7 +4,7 @@ import assignment5.State;
 
 import java.util.ArrayList;
 
-public class ElectoralDemA implements IStrategy {
+public class ElectoralDemA implements IElectoralStrategy {
 
     ArrayList<State> states = new ArrayList<>();
     ElectoralHonest electHonest;
@@ -13,12 +13,12 @@ public class ElectoralDemA implements IStrategy {
     public ElectoralDemA(ArrayList<State> states) {
         this.states = states;
         electHonest = new ElectoralHonest(states);
-        totalRep = electHonest.getRep();
-        totalDem = electHonest.getDem();
+        totalRep = electHonest.getElectRep();
+        totalDem = electHonest.getElectDem();
     }
 
 
-    public int getDem() {
+    public int getElectDem() {
 
        State stateElect = getHighest();
         if(stateElect.getRep() > stateElect.getDem())
@@ -28,7 +28,7 @@ public class ElectoralDemA implements IStrategy {
         return totalDem;
     }
 
-    public int getRep(){
+    public int getElectRep(){
         State stateElect = getHighest();
 
         if(stateElect.getRep() > stateElect.getDem())
